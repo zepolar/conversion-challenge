@@ -56,9 +56,8 @@ public class ConversionAPI {
                     } catch (Exception e) {
                         return Mono.error(e);
                     }
-                })
-                .retry(3)
-                .onErrorResume(throwable -> this.retrieveConversionFromSecundary(cryptoCurrency));
+                });
+                //.onErrorResume(throwable -> this.retrieveConversionFromSecundary(cryptoCurrency));
     }
 
     private Mono<Double> retrieveConversionFromSecundary(CryptoCurrencyEnum cryptoCurrency) {

@@ -5,7 +5,6 @@ import com.linbrox.conversion.application.service.ExternalAPIService;
 import com.linbrox.conversion.common.CryptoCurrencyEnum;
 import com.linbrox.conversion.common.HyundaiModelEnum;
 import com.linbrox.conversion.domain.model.Conversion;
-import com.linbrox.conversion.domain.model.ConversionVersion;
 import com.linbrox.conversion.domain.repository.ConversionCacheRepository;
 import com.linbrox.conversion.domain.repository.ConversionRepository;
 import com.linbrox.conversion.domain.repository.ConversionVersionRepository;
@@ -16,9 +15,12 @@ import org.mockito.MockitoAnnotations;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 class ConversionServiceImplTest {
